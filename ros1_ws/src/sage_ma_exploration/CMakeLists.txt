@@ -37,7 +37,11 @@ catkin_package(
     visualization_msgs
 )
 
+catkin_install_python(PROGRAMS
+  scripts/operator_pipeline_node.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 install(DIRECTORY launch config
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-

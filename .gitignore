@@ -21,4 +21,5 @@ weights/
 model_weights/
 pretrained_weights/
 wandb/
-
+__pycache__/
+*.pyc

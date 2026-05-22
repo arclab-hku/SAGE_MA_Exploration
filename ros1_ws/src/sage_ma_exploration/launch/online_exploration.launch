@@ -9,6 +9,7 @@
   <arg name="obstacle_inflation" default="0.05" />
 
   <rosparam command="load" file="$(arg config_file)" />
+  <rosparam command="load" file="$(find sage_ma_exploration)/config/operator_pipeline.yaml" ns="/sage_ma_exploration/operator_pipeline" />
 
   <param name="/sage_ma_exploration/use_learned_utility" value="$(arg use_learned_utility)" />
   <param name="/sage_ma_exploration/model_path" value="$(arg model_path)" />
@@ -19,5 +20,13 @@
   <include file="$(find sage_ma_exploration)/launch/graph_sync_swarm.launch">
     <arg name="drone_num" value="$(arg drone_num)" />
   </include>
-</launch>
 
+  <node if="$(arg use_learned_utility)"
+        name="operator_pipeline"
+        pkg="sage_ma_exploration"
+        type="operator_pipeline_node.py"
+        output="screen">
+    <param name="model_path" value="$(arg model_path)" />
+    <param name="config_namespace" value="/sage_ma_exploration/operator_pipeline" />
+  </node>
+</launch>

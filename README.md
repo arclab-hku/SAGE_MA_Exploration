@@ -11,6 +11,7 @@ At this stage, the repository is intentionally kept as a lightweight shell to pr
 ```text
 SAGE_MA_Exploration/
 ├── deployment/                   # Clean online deployment templates
+│   └── operators/                # Operator pipeline notes and interfaces
 ├── docs/                         # Reviewer notes and release documentation
 ├── ros1_ws/src/sage_ma_exploration/
 │   ├── launch/                   # ROS launch files
@@ -20,7 +21,7 @@ SAGE_MA_Exploration/
 │   └── src/
 │       ├── mapping/              # Local map and occupancy processing
 │       ├── graph/                # Global graph construction and update logic
-│       ├── policy/               # Learned utility and decision modules
+│       ├── policy/               # Operator pipeline and decision modules
 │       ├── planning/             # Frontier, path, and task planning modules
 │       └── communication/        # Multi-agent information sharing modules
 ├── configs/

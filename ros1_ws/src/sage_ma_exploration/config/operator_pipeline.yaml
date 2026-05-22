@@ -1,0 +1,22 @@
+preprocess:
+  normalize_positions: true
+  include_robot_state: true
+  include_frontier_features: true
+  include_connectivity_features: true
+  max_candidate_nodes: 128
+
+inference:
+  backend: "onnx"
+  model_path: ""
+  batch_size: 1
+
+postprocess:
+  score_temperature: 1.0
+  top_k: 1
+  min_goal_distance: 0.3
+
+safety_filter:
+  require_reachable: true
+  reject_occupied_goals: true
+  min_clearance_m: 0.2
+
