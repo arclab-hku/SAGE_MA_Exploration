@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="drone_num" default="2" />
+  <arg name="config_file" default="$(find sage_ma_exploration)/config/default_online.yaml" />
+  <arg name="use_learned_utility" default="false" />
+  <arg name="model_path" default="" />
+  <arg name="max_vel" default="3.0" />
+  <arg name="max_acc" default="2.5" />
+  <arg name="obstacle_inflation" default="0.05" />
+
+  <rosparam command="load" file="$(arg config_file)" />
+
+  <param name="/sage_ma_exploration/use_learned_utility" value="$(arg use_learned_utility)" />
+  <param name="/sage_ma_exploration/model_path" value="$(arg model_path)" />
+  <param name="/sage_ma_exploration/max_vel" value="$(arg max_vel)" />
+  <param name="/sage_ma_exploration/max_acc" value="$(arg max_acc)" />
+  <param name="/sage_ma_exploration/obstacle_inflation" value="$(arg obstacle_inflation)" />
+
+  <include file="$(find sage_ma_exploration)/launch/graph_sync_swarm.launch">
+    <arg name="drone_num" value="$(arg drone_num)" />
+  </include>
+</launch>
+

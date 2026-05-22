@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="drone_num" default="2" />
+  <arg name="digest_interval" default="2.0" />
+  <arg name="merge_min_obs" default="3" />
+  <arg name="occupancy_threshold" default="50" />
+  <arg name="treat_nonzero_as_occupied" default="true" />
+  <arg name="obstacle_inflation_cells" default="0" />
+  <arg name="viewpoint_step_m" default="0.9" />
+  <arg name="viewpoint_requires_free" default="false" />
+  <arg name="ray_unknown_blocks" default="false" />
+  <arg name="viewpoint_search_rings" default="3" />
+  <arg name="viewpoint_stale_cycles" default="3" />
+  <arg name="max_obs_count" default="10" />
+  <arg name="grid_downsample_factor" default="9" />
+
+  <include file="$(find sage_ma_exploration)/launch/graph_sync.launch">
+    <arg name="drone_id" value="1" />
+    <arg name="drone_num" value="$(arg drone_num)" />
+    <arg name="digest_interval" value="$(arg digest_interval)" />
+    <arg name="merge_min_obs" value="$(arg merge_min_obs)" />
+    <arg name="occupancy_threshold" value="$(arg occupancy_threshold)" />
+    <arg name="treat_nonzero_as_occupied" value="$(arg treat_nonzero_as_occupied)" />
+    <arg name="obstacle_inflation_cells" value="$(arg obstacle_inflation_cells)" />
+    <arg name="viewpoint_step_m" value="$(arg viewpoint_step_m)" />
+    <arg name="viewpoint_requires_free" value="$(arg viewpoint_requires_free)" />
+    <arg name="ray_unknown_blocks" value="$(arg ray_unknown_blocks)" />
+    <arg name="viewpoint_search_rings" value="$(arg viewpoint_search_rings)" />
+    <arg name="viewpoint_stale_cycles" value="$(arg viewpoint_stale_cycles)" />
+    <arg name="max_obs_count" value="$(arg max_obs_count)" />
+    <arg name="grid_downsample_factor" value="$(arg grid_downsample_factor)" />
+  </include>
+
+  <include file="$(find sage_ma_exploration)/launch/graph_sync.launch" if="$(eval arg('drone_num') >= 2)">
+    <arg name="drone_id" value="2" />
+    <arg name="drone_num" value="$(arg drone_num)" />
+    <arg name="digest_interval" value="$(arg digest_interval)" />
+    <arg name="merge_min_obs" value="$(arg merge_min_obs)" />
+    <arg name="occupancy_threshold" value="$(arg occupancy_threshold)" />
+    <arg name="treat_nonzero_as_occupied" value="$(arg treat_nonzero_as_occupied)" />
+    <arg name="obstacle_inflation_cells" value="$(arg obstacle_inflation_cells)" />
+    <arg name="viewpoint_step_m" value="$(arg viewpoint_step_m)" />
+    <arg name="viewpoint_requires_free" value="$(arg viewpoint_requires_free)" />
+    <arg name="ray_unknown_blocks" value="$(arg ray_unknown_blocks)" />
+    <arg name="viewpoint_search_rings" value="$(arg viewpoint_search_rings)" />
+    <arg name="viewpoint_stale_cycles" value="$(arg viewpoint_stale_cycles)" />
+    <arg name="max_obs_count" value="$(arg max_obs_count)" />
+    <arg name="grid_downsample_factor" value="$(arg grid_downsample_factor)" />
+  </include>
+
+  <include file="$(find sage_ma_exploration)/launch/graph_sync.launch" if="$(eval arg('drone_num') >= 3)">
+    <arg name="drone_id" value="3" />
+    <arg name="drone_num" value="$(arg drone_num)" />
+    <arg name="digest_interval" value="$(arg digest_interval)" />
+    <arg name="merge_min_obs" value="$(arg merge_min_obs)" />
+    <arg name="occupancy_threshold" value="$(arg occupancy_threshold)" />
+    <arg name="treat_nonzero_as_occupied" value="$(arg treat_nonzero_as_occupied)" />
+    <arg name="obstacle_inflation_cells" value="$(arg obstacle_inflation_cells)" />
+    <arg name="viewpoint_step_m" value="$(arg viewpoint_step_m)" />
+    <arg name="viewpoint_requires_free" value="$(arg viewpoint_requires_free)" />
+    <arg name="ray_unknown_blocks" value="$(arg ray_unknown_blocks)" />
+    <arg name="viewpoint_search_rings" value="$(arg viewpoint_search_rings)" />
+    <arg name="viewpoint_stale_cycles" value="$(arg viewpoint_stale_cycles)" />
+    <arg name="max_obs_count" value="$(arg max_obs_count)" />
+    <arg name="grid_downsample_factor" value="$(arg grid_downsample_factor)" />
+  </include>
+</launch>
+

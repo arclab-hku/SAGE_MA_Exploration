@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="drone_id" default="1" />
+  <arg name="drone_num" default="2" />
+  <arg name="digest_interval" default="2.0" />
+  <arg name="merge_min_obs" default="3" />
+  <arg name="occupancy_threshold" default="50" />
+  <arg name="treat_nonzero_as_occupied" default="true" />
+  <arg name="obstacle_inflation_cells" default="0" />
+  <arg name="viewpoint_step_m" default="0.9" />
+  <arg name="viewpoint_requires_free" default="false" />
+  <arg name="ray_unknown_blocks" default="false" />
+  <arg name="viewpoint_search_rings" default="3" />
+  <arg name="viewpoint_stale_cycles" default="3" />
+  <arg name="max_obs_count" default="10" />
+  <arg name="grid_downsample_factor" default="9" />
+
+  <node name="graph_sync_drone$(arg drone_id)"
+        pkg="sage_ma_exploration"
+        type="graph_sync_node.py"
+        output="screen">
+    <remap from="/graph_sync/layer2_delta_send" to="/graph_sync/layer2_delta" />
+    <remap from="/graph_sync/layer2_delta_recv" to="/graph_sync/layer2_delta" />
+    <remap from="/graph_sync/graph_delta_send" to="/graph_sync/graph_delta" />
+    <remap from="/graph_sync/graph_delta_recv" to="/graph_sync/graph_delta" />
+    <remap from="/graph_sync/state_digest_send" to="/graph_sync/state_digest" />
+    <remap from="/graph_sync/state_digest_recv" to="/graph_sync/state_digest" />
+
+    <param name="drone_id" value="$(arg drone_id)" />
+    <param name="drone_num" value="$(arg drone_num)" />
+    <param name="digest_interval" value="$(arg digest_interval)" />
+    <param name="merge_min_obs" value="$(arg merge_min_obs)" />
+    <param name="occupancy_threshold" value="$(arg occupancy_threshold)" />
+    <param name="treat_nonzero_as_occupied" value="$(arg treat_nonzero_as_occupied)" />
+    <param name="obstacle_inflation_cells" value="$(arg obstacle_inflation_cells)" />
+    <param name="viewpoint_step_m" value="$(arg viewpoint_step_m)" />
+    <param name="viewpoint_requires_free" value="$(arg viewpoint_requires_free)" />
+    <param name="ray_unknown_blocks" value="$(arg ray_unknown_blocks)" />
+    <param name="viewpoint_search_rings" value="$(arg viewpoint_search_rings)" />
+    <param name="viewpoint_stale_cycles" value="$(arg viewpoint_stale_cycles)" />
+    <param name="max_obs_count" value="$(arg max_obs_count)" />
+    <param name="grid_downsample_factor" value="$(arg grid_downsample_factor)" />
+  </node>
+</launch>
+

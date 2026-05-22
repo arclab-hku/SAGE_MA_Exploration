@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="drone_num" default="2" />
+  <arg name="config_file" default="$(find sage_ma_exploration)/config/default_online.yaml" />
+  <arg name="use_learned_utility" default="false" />
+  <arg name="model_path" default="" />
+  <arg name="max_vel" default="3.0" />
+  <arg name="max_acc" default="2.5" />
+  <arg name="obstacle_inflation" default="0.05" />
+
+  <include file="$(find sage_ma_exploration)/launch/online_exploration.launch">
+    <arg name="drone_num" value="$(arg drone_num)" />
+    <arg name="config_file" value="$(arg config_file)" />
+    <arg name="use_learned_utility" value="$(arg use_learned_utility)" />
+    <arg name="model_path" value="$(arg model_path)" />
+    <arg name="max_vel" value="$(arg max_vel)" />
+    <arg name="max_acc" value="$(arg max_acc)" />
+    <arg name="obstacle_inflation" value="$(arg obstacle_inflation)" />
+  </include>
+</launch>
+

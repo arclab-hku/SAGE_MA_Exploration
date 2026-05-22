@@ -1,6 +1,5 @@
-# ROS Package Placeholder
+# ROS Package
 
-This directory will contain the ROS package for SAGE multi-agent exploration.
+This directory contains the public ROS interface and clean deployment templates for multi-agent exploration.
 
-The planned release includes launch files, planner configuration, mapping and graph modules, communication interfaces, and visualization settings.
-
+The full release will add the implementation modules for mapping, graph construction, learned utility estimation, planning, communication, and visualization. Trained weights and datasets are intentionally excluded from this public shell.

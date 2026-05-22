@@ -1,0 +1,36 @@
+swarm:
+  drone_num: 2
+  odom_topic_template: "/quad_{topic_id}/lidar_slam/odom"
+
+mapping:
+  resolution: 0.1
+  map_size_x: 60.0
+  map_size_y: 60.0
+  map_size_z: 3.5
+  occupancy_threshold: 50
+  treat_nonzero_as_occupied: true
+  obstacle_inflation_cells: 0
+
+communication:
+  digest_interval: 2.0
+  merge_min_obs: 3
+  max_obs_count: 10
+  grid_downsample_factor: 9
+
+graph:
+  viewpoint_step_m: 0.9
+  viewpoint_requires_free: false
+  ray_unknown_blocks: false
+  viewpoint_search_rings: 3
+  viewpoint_stale_cycles: 3
+
+planning:
+  max_vel: 3.0
+  max_acc: 2.5
+  obstacle_inflation: 0.05
+
+policy:
+  use_learned_utility: false
+  backend: "onnx"
+  model_path: ""
+

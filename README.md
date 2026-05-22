@@ -2,7 +2,7 @@
 
 This repository is a public placeholder for the SAGE multi-agent exploration project during the review process.
 
-The complete code release is being prepared and will be made available in this repository. The release will include the ROS simulation package, model and planning components, evaluation scripts, configuration files, and instructions needed to reproduce the reported experiments.
+The complete code release is being prepared and will be made available in this repository. The release will include the ROS simulation package, learned-policy interfaces, planning components, evaluation scripts, configuration files, and instructions needed to reproduce the reported experiments.
 
 At this stage, the repository is intentionally kept as a lightweight shell to provide reviewers with a stable project URL while the implementation is being cleaned, documented, and packaged for public use.
 
@@ -10,6 +10,7 @@ At this stage, the repository is intentionally kept as a lightweight shell to pr
 
 ```text
 SAGE_MA_Exploration/
+├── deployment/                   # Clean online deployment templates
 ├── docs/                         # Reviewer notes and release documentation
 ├── ros1_ws/src/sage_ma_exploration/
 │   ├── launch/                   # ROS launch files
@@ -28,7 +29,7 @@ SAGE_MA_Exploration/
 ├── scripts/
 │   ├── training/                 # Training entry points
 │   ├── evaluation/               # Batch evaluation and metric scripts
-│   └── visualization/            # Plotting and replay utilities
+│   └── visualization/            # Plotting and visualization utilities
 ├── assets/figures/               # Figures and lightweight visual assets
 └── tests/                        # Unit and integration tests
 ```
@@ -36,6 +37,7 @@ SAGE_MA_Exploration/
 ## Release Status
 
 - Public repository shell: available.
+- Clean deployment scaffold without trained weights: available.
 - Full source code and reproduction instructions: preparing for release.
 - Supplementary scripts, configuration files, and experiment assets: preparing for release.
 
