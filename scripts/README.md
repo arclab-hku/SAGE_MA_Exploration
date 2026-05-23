@@ -1,4 +1,3 @@
 # Scripts
 
-This directory will contain training, evaluation, metric computation, and visualization scripts for reproducing the experiments.
-
+This directory stores evaluation, metric computation, and visualization entry points.

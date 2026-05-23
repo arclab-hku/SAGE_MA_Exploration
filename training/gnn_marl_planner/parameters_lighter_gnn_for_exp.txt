@@ -1,0 +1,22 @@
+--num_embeddings 5
+--embedding_size 32
+--gnn_hidden_size 32
+--gnn_num_heads 2 
+--gnn_layer_N 2
+--add_dropout
+--dropout_prob 0.1
+--num_mini_batch 16
+--nn_type gnn
+--episode_length 200
+--ppo_epoch 2
+--n_rollout_threads 16
+--entropy_coef 0.01
+--gamma 0.99
+--batch_expand_times 2
+--transpose_time 1
+--hidden_size 64 
+--max_grad_norm 0.5
+--d_model 32
+--nhead 4
+--lr_rate 0.00005
+

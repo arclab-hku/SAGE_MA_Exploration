@@ -1,6 +1,6 @@
 # Operator Pipeline
 
-The online policy path is organized as a small operator pipeline:
+The online policy path is organized as:
 
 ```text
 map and graph state
@@ -11,7 +11,9 @@ map and graph state
   -> selected exploration target
 ```
 
-The public repository includes the interface, launch hook, and configuration template for this pipeline. Trained weights and hardware-specific runtime assets are intentionally excluded.
+The corresponding implementation components are exposed in:
 
-External weights can be provided at runtime through `MODEL_PATH` after the full release is available.
-
+- `training/gnn_marl_planner/occupancy_to_graph.py`
+- `training/gnn_marl_planner/model_inference_mixin.py`
+- `training/gnn_marl_planner/goal_dispatch_mixin.py`
+- `training/gnn_marl_planner/viewpoint_ops_mixin.py`

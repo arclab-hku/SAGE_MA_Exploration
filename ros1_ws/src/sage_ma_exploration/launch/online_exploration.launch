@@ -20,13 +20,4 @@
   <include file="$(find sage_ma_exploration)/launch/graph_sync_swarm.launch">
     <arg name="drone_num" value="$(arg drone_num)" />
   </include>
-
-  <node if="$(arg use_learned_utility)"
-        name="operator_pipeline"
-        pkg="sage_ma_exploration"
-        type="operator_pipeline_node.py"
-        output="screen">
-    <param name="model_path" value="$(arg model_path)" />
-    <param name="config_namespace" value="/sage_ma_exploration/operator_pipeline" />
-  </node>
 </launch>

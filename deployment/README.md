@@ -1,8 +1,6 @@
 # Deployment
 
-This folder provides a clean online deployment scaffold for the multi-agent exploration system.
-
-It contains ROS launch wrappers, parameter templates, and helper scripts. It does not contain trained weights, checkpoints, rosbags, logs, datasets, or large runtime artifacts.
+This folder contains the environment files, launch wrappers, and configuration templates for online SAGE deployment.
 
 ## Layout
 
@@ -16,18 +14,25 @@ deployment/
 │   └── online_exploration.launch
 ├── operators/
 │   └── README.md
-├── scripts/
-│   ├── build_ros1_workspace.sh
-│   └── run_online_exploration.sh
-└── env.example
+├── requirements.txt
+├── env.example
+└── scripts/
+    ├── build_ros1_workspace.sh
+    └── run_online_exploration.sh
 ```
 
-## Basic Use
+## Setup
+
+```bash
+python3 -m pip install -r deployment/requirements.txt
+deployment/scripts/build_ros1_workspace.sh
+```
+
+## Run
 
 ```bash
 cp deployment/env.example .env
-deployment/scripts/build_ros1_workspace.sh
 deployment/scripts/run_online_exploration.sh
 ```
 
-Set `MODEL_PATH` in the environment only when running with external trained weights stored outside this repository.
+The environment file controls the ROS workspace path, scenario configuration, planner limits, and optional learned-utility path.

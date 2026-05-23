@@ -1,4 +1,3 @@
 # Tests
 
-This directory will contain unit and integration tests for released modules.
-
+This directory contains tests for the core Python modules.
